@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/home/static/css/main.79f0d69a.css",
-    "main.js": "/home/static/js/main.e2dee9b4.js",
+    "main.js": "/home/static/js/main.21cfb7bc.js",
     "static/media/books.png": "/home/static/media/books.e05ee4910641340cd50d.png",
     "static/media/clean code.png": "/home/static/media/clean code.5400039de81379761aca.png",
     "static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.png": "/home/static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.e689be24c039b38a06bf.png",
     "static/media/elloquent.jpg": "/home/static/media/elloquent.767bdb965a128118e54f.jpg",
     "index.html": "/home/index.html",
     "main.79f0d69a.css.map": "/home/static/css/main.79f0d69a.css.map",
-    "main.e2dee9b4.js.map": "/home/static/js/main.e2dee9b4.js.map"
+    "main.21cfb7bc.js.map": "/home/static/js/main.21cfb7bc.js.map"
   },
   "entrypoints": [
     "static/css/main.79f0d69a.css",
-    "static/js/main.e2dee9b4.js"
+    "static/js/main.21cfb7bc.js"
   ]
 }
