@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useLocalStorage } from '@uidotdev/usehooks';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Card = ({ book }) => {
   const [cart, setCart] = useLocalStorage('cart', []);
@@ -21,7 +22,7 @@ const Card = ({ book }) => {
       setCart([...cart, { ...book, qty }]);
     }
 
-    alert(`${book.volumeInfo.title} was added to cart`);
+    toast.success(`${book.volumeInfo?.title} was added to cart`);
   };
 
   const handleBookmark = () => {
@@ -29,10 +30,12 @@ const Card = ({ book }) => {
 
     const exists = bookmarks.some(item => item.id === book.id);
     if (exists) {
-      alert(`${book.volumeInfo?.title} is already bookmarked!`);
+      toast.error(`${book.volumeInfo?.title} is already bookmarked!`);
     } else {
       setBookmarks([...bookmarks, book]);
-      alert(`${book.volumeInfo?.title} was added to bookmarks`);
+      toast(`${book.volumeInfo?.title} was added to bookmarks`, {
+        icon: '🔖',
+      });
     }
   };
 
@@ -61,8 +64,6 @@ const Card = ({ book }) => {
           <Link to={`/book/${book.id}` } className='transition-transform duration-500 ease-in-out hover:scale-150'>
             <i className="fa-solid fa-circle-info"></i>
           </Link>
-            
-          
         </div>
       </div>
     </div>

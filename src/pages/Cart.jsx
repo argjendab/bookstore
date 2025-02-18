@@ -1,5 +1,6 @@
 import { useLocalStorage } from '@uidotdev/usehooks'
 import React from 'react'
+import toast from 'react-hot-toast';
 
 function Cart() {
 	const [cart, setCart] = useLocalStorage('cart', [])
@@ -40,7 +41,7 @@ function Cart() {
 
 		setCart([])
 
-		alert(`Order was completed successfully.`)
+		toast.success(`Order was completed successfully.`)
 	}
 //grid grid-cols-4 gap-y-20 my-4 justify-center items-center gap-14 border border-gray-300 py-7 rounded-xl
 return (

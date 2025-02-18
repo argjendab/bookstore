@@ -1,7 +1,9 @@
 import { useLocalStorage } from '@uidotdev/usehooks';
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import img from '../imgs/books.png'
+import toast from 'react-hot-toast';
 
 function Register() {
 
@@ -30,18 +32,18 @@ function Register() {
     }
     
     if (!username || !password || !passwordConfirmation) {
-      alert('All fields are required!');
+      toast.error('All fields are required!');
       return;
     }
 
     // Check if passwords match
     if (password !== passwordConfirmation) {
-      alert('Passwords do not match!');
+      toast.error('Passwords do not match!');
       return;
     }
     const userExists = users.some((user) => user.username === username);
     if (userExists) {
-      alert('User already exists!');
+      toast.error('User already exists!');
       return;
     }
 
@@ -110,9 +112,9 @@ function Register() {
             <span className="text-sm text-black">
               Already have an account?
             </span>
-            <a href="#" className="mx-2 text-sm font-bold text-blue-900 hover:underline">
+            <Link to={"/login"} className="mx-2 text-sm font-bold text-blue-900 hover:underline">
               Login here!
-            </a>
+            </Link>
           </div>
         </div>
       </div>

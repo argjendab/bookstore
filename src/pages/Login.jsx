@@ -1,7 +1,8 @@
 import { useLocalStorage } from '@uidotdev/usehooks'
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import img from  '../imgs/books.png'
+import toast from 'react-hot-toast';
 
 function Login() {
   
@@ -23,14 +24,19 @@ function Login() {
     const username = data["username"].value;
     const password = data["password"].value;
   
-    // Gjej përdoruesin sipas username
     const user = users.find(item => item.username === username);
   
+
+    if(!username || !password) {
+      toast.error('All fields are required!');
+      return;
+    }
+
     if (!user) {
-      alert("This user does not exist!");
+      toast.error("This user does not exist!");
       navigate('/register')
     } else if (user.password !== password) {
-      alert("Incorrect password!");
+      toast.error("Incorrect password!");
     } else {
       setLoggedInUser(user);
       navigate("/dashboard");
@@ -87,9 +93,9 @@ function Login() {
             <span className="text-sm text-black">
               Don't have an account?
             </span>
-            <a href="#" className="mx-2 text-sm font-bold text-blue-900 hover:underline">
+            <Link to={"/register"} className="mx-2 text-sm font-bold text-blue-900 hover:underline">
               Sign up here!
-            </a>
+            </Link>
           </div>
         </div>
       </div>

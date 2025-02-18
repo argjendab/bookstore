@@ -1,6 +1,7 @@
 import { useLocalStorage } from '@uidotdev/usehooks';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function Profile() {
   const [users, setUsers] = useLocalStorage('users', []);
@@ -25,7 +26,7 @@ function Profile() {
 
     // Check if the current password matches the logged-in user's password
     if (currentPassword !== loggedInUser.password) {
-      setError('Incorrect current password');
+      toast.error('Incorrect current password');
       return;
     }
 
@@ -44,7 +45,7 @@ function Profile() {
     setLoggedInUser({ username: newUsername, password: newPassword });
 
     // Show success message and reset the form
-    alert('Your profile was updated successfully');
+    toast.success('Your profile was updated successfully');
     e.target.reset();
   };
 

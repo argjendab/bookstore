@@ -1,6 +1,7 @@
 import { useLocalStorage } from '@uidotdev/usehooks';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function Orders() {
   const [orders, setOrders] = useLocalStorage('orders', []);
@@ -23,7 +24,7 @@ function Orders() {
 
     // Function to clear orders for the logged-in user
     const handleClearOrders = () => {
-      alert('All orders are cleared :)')
+      toast.success('All orders are cleared :)')
       const updatedOrders = orders.filter(
         (order) => order.user.username !== loggedInUser.username
       );

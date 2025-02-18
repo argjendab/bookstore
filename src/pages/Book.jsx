@@ -1,7 +1,7 @@
 import { useLocalStorage } from '@uidotdev/usehooks';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Card from '../components/Cards';
+import toast from 'react-hot-toast';
 
 function Book() {
   const [cart, setCart] = useLocalStorage('cart', []);
@@ -43,7 +43,7 @@ function Book() {
       setCart([...cart, { ...book, qty }]);
     }
 
-    alert(`${book.volumeInfo?.title} was added to cart`);
+    toast.success(`${book.volumeInfo?.title} was added to cart`);
   };
 
   const handleBookmark = () => {
@@ -51,10 +51,14 @@ function Book() {
 
     const exists = bookmarks.some(item => item.id === book.id);
     if (exists) {
-      alert(`${book.volumeInfo?.title} is already bookmarked!`);
+      toast.error(`${book.volumeInfo?.title} is already bookmarked!`);
     } else {
       setBookmarks([...bookmarks, book]);
-      alert(`${book.volumeInfo?.title} was added to bookmarks`);
+      // alert(`${book.volumeInfo?.title} was added to bookmarks`);
+      toast(`${book.volumeInfo?.title} was added to bookmarks`, {
+        icon: '🔖',
+      });
+      
     }
   };
   return (
@@ -86,7 +90,7 @@ function Book() {
                 Add to Cart
               </button>
               <button 
-                onClick={handleBookmark} 
+                onClick={handleBookmark}
                 className="bg-white border px-4 py-2 rounded-lg hover:bg-red-200 text-red-500"
               >
                 Bookmark

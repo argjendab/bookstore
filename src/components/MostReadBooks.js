@@ -6,8 +6,8 @@ const BooksAPI = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [cart, setCart]=useLocalStorage('cart', []);
-  const [bookmarks, setBookmarks] = useLocalStorage('bookmarks', []);
+  // const [cart, setCart]=useLocalStorage('cart', []);
+  // const [bookmarks, setBookmarks] = useLocalStorage('bookmarks', []);
   
   useEffect(() => {
     const fetchBooks = async () => {

@@ -11,6 +11,8 @@ import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import toast,  { Toaster } from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 function App() {
 
@@ -30,7 +32,10 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      
+      <div><Toaster /></div>
       <Footer />
     </BrowserRouter>
   );
