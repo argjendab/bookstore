@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.79f0d69a.css",
-    "main.js": "/home/static/js/main.21cfb7bc.js",
-    "static/media/books.png": "/home/static/media/books.e05ee4910641340cd50d.png",
-    "static/media/clean code.png": "/home/static/media/clean code.5400039de81379761aca.png",
-    "static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.png": "/home/static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.e689be24c039b38a06bf.png",
-    "static/media/elloquent.jpg": "/home/static/media/elloquent.767bdb965a128118e54f.jpg",
-    "index.html": "/home/index.html",
-    "main.79f0d69a.css.map": "/home/static/css/main.79f0d69a.css.map",
-    "main.21cfb7bc.js.map": "/home/static/js/main.21cfb7bc.js.map"
+    "main.css": "/bookstore/static/css/main.79f0d69a.css",
+    "main.js": "/bookstore/static/js/main.d7ce1f8b.js",
+    "static/media/books.png": "/bookstore/static/media/books.e05ee4910641340cd50d.png",
+    "static/media/clean code.png": "/bookstore/static/media/clean code.5400039de81379761aca.png",
+    "static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.png": "/bookstore/static/media/Algorithms-Robert-Sedgewick-Kevin-Wayne-Photoroom.e689be24c039b38a06bf.png",
+    "static/media/elloquent.jpg": "/bookstore/static/media/elloquent.767bdb965a128118e54f.jpg",
+    "index.html": "/bookstore/index.html",
+    "main.79f0d69a.css.map": "/bookstore/static/css/main.79f0d69a.css.map",
+    "main.d7ce1f8b.js.map": "/bookstore/static/js/main.d7ce1f8b.js.map"
   },
   "entrypoints": [
     "static/css/main.79f0d69a.css",
-    "static/js/main.21cfb7bc.js"
+    "static/js/main.d7ce1f8b.js"
   ]
 }
